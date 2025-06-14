@@ -52,16 +52,6 @@ public class examenFinal {
         return posicion;
     }
 
-    public static void consumoTotalPorVehiculo(int[][] matriz) {
-        for (int i = 0; i < matriz.length; i++) {
-            int total = 0;
-            for (int j = 0; j < matriz[i].length; j++) {
-                total += matriz[i][j];
-            }
-            System.out.println("Vehículo " + i + " tuvo un consumo total de " + total + " galones.");
-        }
-    }
-
     public static void main(String[] args) {
         int[][] consumo = {
             {5, 2, 9, 7},
@@ -77,8 +67,6 @@ public class examenFinal {
         int[] maxPos = posicionConsumoMax(consumo);
         System.out.println("Consumo máximo en la posición [" + maxPos[0] + "][" + maxPos[1] + "]");
 
-        System.out.println("\nBONUS: Consumo total por vehículo:");
-        consumoTotalPorVehiculo(consumo);
     }
 }
 
