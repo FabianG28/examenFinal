@@ -1,6 +1,6 @@
 public class examenFinal {
 
-    public static int contarConsumosAltos(int[][] matriz) {
+    public static int contadorConsumosAltos(int[][] matriz) {
         int contador = 0;
         for (int[] fila : matriz) {
             for (int consumo : fila) {
@@ -12,7 +12,7 @@ public class examenFinal {
         return contador;
     }
 
-    public static double promedioConsumoModerado(int[][] matriz) {
+    public static double promedioConsumoM(int[][] matriz) {
         int suma = 0;
         int cantidad = 0;
         for (int[] fila : matriz) {
@@ -26,7 +26,7 @@ public class examenFinal {
         return cantidad > 0 ? (double) suma / cantidad : 0.0;
     }
 
-    public static void imprimirConsumoBajo(int[][] matriz) {
+    public static void printConsumosBajos(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 if (matriz[i][j] < 3) {
@@ -36,7 +36,7 @@ public class examenFinal {
         }
     }
 
-    public static int[] posicionConsumoMaximo(int[][] matriz) {
+    public static int[] posicionConsumoMax(int[][] matriz) {
         int max = matriz[0][0];
         int[] posicion = {0, 0};
 
@@ -69,12 +69,12 @@ public class examenFinal {
             {6, 10, 2, 5}
         };
 
-        System.out.println("Consumos mayores a 8 galones: " + contarConsumosAltos(consumo));
-        System.out.println("Promedio de consumos moderados (4-7 galones): " + promedioConsumoModerado(consumo));
+        System.out.println("Consumos mayores a 8 galones: " + contadorConsumosAltos(consumo));
+        System.out.println("Promedio de consumos moderados (4-7 galones): " + promedioConsumoM(consumo));
         System.out.println("Consumos bajos (<3 galones):");
-        imprimirConsumoBajo(consumo);
+        printConsumosBajos(consumo);
 
-        int[] maxPos = posicionConsumoMaximo(consumo);
+        int[] maxPos = posicionConsumoMax(consumo);
         System.out.println("Consumo máximo en la posición [" + maxPos[0] + "][" + maxPos[1] + "]");
 
         System.out.println("\nBONUS: Consumo total por vehículo:");
